@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+</head>
+<body>
+    <h3>Books</h3>
+
+    <div id="app">
+        <div v-if="showBooks">
+            <p>{{ title }} - {{ author }} - {{ age }}</p>
+        </div>
+
+        <button @click="toggleShowBooks"> <!-- Does the same as the below v-show but worse for performance as it completely removes it from the DOM -->
+            <span v-if="showBooks">Hide Books</span>
+            <span v-else>Show Books</span>
+        </button>
+
+        <button @click="toggleShowBooks"> <!-- v-show uses CSS to hide/show the content and doesn't completely remove it from the DOM - this method is better for performance and best used for itme that will used alot like drop downs or links in a nav -->
+            <span v-show="showBooks">Hide Books 2</span>
+            <span v-show="!showBooks">Show Books 2</span>
+        </button>
+
+
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
+
