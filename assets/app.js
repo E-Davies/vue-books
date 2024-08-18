@@ -7,9 +7,9 @@ const app = Vue.createApp({
             gitHub: 'https://github.com/E-Davies',
             portfolio: 'https://e-davies.github.io/react-portfolio/',
             books: [
-                {title: 'Name of the Wind', author:'Patrick Rothfuss', img:'./assets/images/1.jpg'},
-                {title: 'The Way of Kings', author:'Brandon Sanderson', img:'./assets/images/2.jpg'},
-                {title: 'The Final Empire', author:'Brandon Sanderson', img:'./assets/images/3.jpg'}
+                {title: 'Name of the Wind', author:'Patrick Rothfuss', img:'./assets/images/1.jpg', isFav: false},
+                {title: 'The Way of Kings', author:'Brandon Sanderson', img:'./assets/images/2.jpg', isFav: false},
+                {title: 'The Final Empire', author:'Brandon Sanderson', img:'./assets/images/3.jpg', isFav: false}
             ],
             age: 45,
             x: 0,
@@ -33,6 +33,9 @@ const app = Vue.createApp({
         handleMousemove(e) {
             this.x = e.offsetX;
             this.y = e.offsetY;
+        },
+        toggleFav(book) {
+            book.isFav = !book.isFav;
         }
     }
 });
