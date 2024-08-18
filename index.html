@@ -35,6 +35,7 @@
         <br>
         <hr>
         <h2>Different Events:</h2>
+        <p>(see console log)</p>
         <!-- events syntax is: v-on:click="..." but the short hand is @click="..."-->
         <div class="box" @mouseover="handleEvent($event, 5)">mouseover (enter)</div> <!-- you need to explicitly add $event to get the event object if there is another parameter -->
         <div class="box" @mouseleave="handleEvent">mouseleave</div> <!-- but if there isn't another parameter - in your js you can add 'e' as the only parameter to get the event object -->
