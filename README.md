@@ -1,14 +1,15 @@
-# Vue Books
+# Vue Practice
 ![MIT License Badge](https://img.shields.io/badge/License-MIT-blue)
 
 ## Description
 
-I wanted to learn and practice my skills in Vue by creating a simple Book app
+I wanted to learn and practice my skills in Vue by creating a simple app
 
 This has been achieved by:
 * Using a Vue component to display a list of different books
 * Using methods such as v-show, v-if, v-else to dynamically show/hide content
 * Using event methods such as click, mouseover etc.
+* Dynamically updating content
 
 ![screenshot of ...](./images/navigating-to-about-me.jpg) 
 
@@ -30,7 +31,7 @@ This has been achieved by:
 
 ![Github Pages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white)
 
-Please use the following link to access the website: https://e-davies.github.io/vue-books/
+Please use the following link to access the website: https://e-davies.github.io/vue-practice/
 
 
 
