@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assests/styles.css">
+    <link rel="stylesheet" href="./assets/styles.css">
     <title>Vue Practice</title>
     <script src="https://unpkg.com/vue@3.0.2"></script>
 </head>
@@ -28,6 +28,7 @@
             <span v-show="showBooks">Hide Books (v-show)</span>
             <span v-show="!showBooks">Show Books (v-show)</span>
         </button>
+
         <br>
         <br>
         <br>
@@ -44,6 +45,7 @@
         <!-- the for loop syntax is: v-for="book in books" -> book is the individual item within the books array, this could be named anything e.g "items in books" -->
         <ul>
             <li v-for="book in books"> 
+                <img :src="book.img" :alt="book.title">
                 <h3>{{ book.title }}</h3> 
                 <p>{{ book.author }}</p>
             </li>
@@ -64,7 +66,7 @@
     </div>
 
 
-    <script src="./assests/app.js"></script>
+    <script src="./assets/app.js"></script>
 </body>
 </html>
 

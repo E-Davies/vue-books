@@ -7,9 +7,9 @@ const app = Vue.createApp({
             gitHub: 'https://github.com/E-Davies',
             portfolio: 'https://e-davies.github.io/react-portfolio/',
             books: [
-                {title: 'Name of the Wind', author:'Patrick Rothfuss', img:''},
-                {title: 'The Way of Kings', author:'Brandon Sanderson', img:''},
-                {title: 'The Final Empire', author:'Brandon Sanderson', img:''}
+                {title: 'Name of the Wind', author:'Patrick Rothfuss', img:'./assets/images/1.jpg'},
+                {title: 'The Way of Kings', author:'Brandon Sanderson', img:'./assets/images/2.jpg'},
+                {title: 'The Final Empire', author:'Brandon Sanderson', img:'./assets/images/3.jpg'}
             ],
             age: 45,
             x: 0,
