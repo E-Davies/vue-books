@@ -34,7 +34,7 @@ li.fav{
     display: inline-block;
 }
 
-.activated {
+.active {
     background: #d68dca;
 }
 

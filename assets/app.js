@@ -26,9 +26,6 @@ const app = Vue.createApp({
             if (data) { //if there is another parameter given then console log this
                 console.log(data);
             }
-            // if (e) {
-
-            // }
         },
         handleMousemove(e) {
             this.x = e.offsetX;
