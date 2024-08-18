@@ -3,32 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Books</title>
+    <link rel="stylesheet" href="./assests/styles.css">
+    <title>Vue Practice</title>
     <script src="https://unpkg.com/vue@3.0.2"></script>
 </head>
 <body>
-    <h3>Books</h3>
+    <h1>Vue Practice</h1>
 
     <div id="app">
+        <br>
+        <br>
+        <br>
+        <h2>Hide/Show Content:</h2>
         <div v-if="showBooks">
             <p>{{ title }} - {{ author }} - {{ age }}</p>
         </div>
 
         <button @click="toggleShowBooks"> <!-- Does the same as the below v-show but worse for performance as it completely removes it from the DOM -->
-            <span v-if="showBooks">Hide Books</span>
-            <span v-else>Show Books</span>
+            <span v-if="showBooks">Hide Books (v-if/v-else)</span>
+            <span v-else>Show Books (if/else)</span>
         </button>
 
         <button @click="toggleShowBooks"> <!-- v-show uses CSS to hide/show the content and doesn't completely remove it from the DOM - this method is better for performance and best used for itme that will used alot like drop downs or links in a nav -->
-            <span v-show="showBooks">Hide Books 2</span>
-            <span v-show="!showBooks">Show Books 2</span>
+            <span v-show="showBooks">Hide Books (v-show)</span>
+            <span v-show="!showBooks">Show Books (v-show)</span>
         </button>
+        <br>
+        <br>
+        <br>
+        <h2>Attribute binding:</h2>
+        <!-- the syntax for binding attributes is: v-bind:href="url" or the shorthand version is to use : in place of v-bind e.g :href=""..."-->
+        <a v-bind:href="gitHub">My GitHub Account</a>
+        <br>
+        <a :href="portfolio">My portfolio</a>
+
+        <br>
+        <br>
+        <br>
+        <h2>Lists using v-for and attribute binding:</h2>
+        <!-- the for loop syntax is: v-for="book in books" -> book is the individual item within the books array, this could be named anything e.g "items in books" -->
+        <ul>
+            <li v-for="book in books"> 
+                <h3>{{ book.title }}</h3> 
+                <p>{{ book.author }}</p>
+            </li>
+        </ul>
+
+    
+        <br>
+        <br>
+        <br>
+        <h2>Different Events:</h2>
+        <!-- events syntax is: v-on:click="..." but the short hand is @click="..."-->
+        <div class="box" @mouseover="handleEvent($event, 5)">mouseover (enter)</div> <!-- you need to explicitly add $event to get the event object if there is another parameter -->
+        <div class="box" @mouseleave="handleEvent">mouseleave</div> <!-- but if there isn't another parameter - in your js you can add 'e' as the only parameter to get the event object -->
+        <div class="box" @dblclick="handleEvent">double click</div>
+        <div class="box" @mousemove="handleMousemove">position x:{{ x }} y:{{ y }}</div>
 
 
     </div>
 
 
-    <script src="app.js"></script>
+    <script src="./assests/app.js"></script>
 </body>
 </html>
 
