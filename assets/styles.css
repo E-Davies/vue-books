@@ -37,3 +37,7 @@ li.fav{
 .activated {
     background: #d68dca;
 }
+
+button{
+    margin-right: 10px;
+}

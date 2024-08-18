@@ -10,12 +10,14 @@
 <body>
     <h1>Vue Practice</h1>
 
-    <div id="app">
+    <div id="app">  <!----------Vue Component---------------->
+        <!-----------------------------------Hide/Show Content------------------------------------------------------>
         <br>
         <h2>Hide/Show Content:</h2>
         <div v-if="showBooks">
             <p>{{ title }} - {{ author }} - {{ age }}</p>
         </div>
+
         <br>
 
         <button @click="toggleShowBooks"> <!-- Does the same as the below v-show but worse for performance as it completely removes it from the DOM -->
@@ -27,16 +29,29 @@
             <span v-show="showBooks">Hide Books (v-show)</span>
             <span v-show="!showBooks">Show Books (v-show)</span>
         </button>
+
+        <!-----------------------------------Different Events:------------------------------------------------------>
         <br>
         <br>
         <hr>
+        <h2>Different Events:</h2>
+        <!-- events syntax is: v-on:click="..." but the short hand is @click="..."-->
+        <div class="box" @mouseover="handleEvent($event, 5)">mouseover (enter)</div> <!-- you need to explicitly add $event to get the event object if there is another parameter -->
+        <div class="box" @mouseleave="handleEvent">mouseleave</div> <!-- but if there isn't another parameter - in your js you can add 'e' as the only parameter to get the event object -->
+        <div class="box" @dblclick="handleEvent">double click</div>
+        <div class="box" @mousemove="handleMousemove">position x:{{ x }} y:{{ y }}</div>
 
+        <!-----------------------------------Attribute binding:------------------------------------------------------>
+        <br>
+        <br>
+        <hr>
         <h2>Attribute binding:</h2>
         <!-- the syntax for binding attributes is: v-bind:href="url" or the shorthand version is to use : in place of v-bind e.g :href=""..."-->
         <a v-bind:href="gitHub">My GitHub Account</a>
         <br>
         <a :href="portfolio">My portfolio</a>
 
+        <!-----------------------------------Lists using v-for:------------------------------------------------------>
         <br>
         <br>
         <br>
@@ -52,16 +67,19 @@
             </li>
         </ul>
 
-    
+        <!-----------------------------------Lists using v-for:------------------------------------------------------>
+        <br>
         <br>
         <br>
         <hr>
-        <h2>Different Events:</h2>
-        <!-- events syntax is: v-on:click="..." but the short hand is @click="..."-->
-        <div class="box" @mouseover="handleEvent($event, 5)">mouseover (enter)</div> <!-- you need to explicitly add $event to get the event object if there is another parameter -->
-        <div class="box" @mouseleave="handleEvent">mouseleave</div> <!-- but if there isn't another parameter - in your js you can add 'e' as the only parameter to get the event object -->
-        <div class="box" @dblclick="handleEvent">double click</div>
-        <div class="box" @mousemove="handleMousemove">position x:{{ x }} y:{{ y }}</div>
+        <h2>Books Filtered by Favourite:</h2>
+        <ul class="centered">
+            <li v-for="book in filteredBooks" :class="{fav: book.isFav}" @click="toggleFav(book)"> 
+                <img :src="book.img" :alt="book.title">
+                <h3>{{ book.title }}</h3> 
+                <p>{{ book.author }}</p>
+            </li>
+        </ul>
 
 
     </div>

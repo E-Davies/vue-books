@@ -26,9 +26,9 @@ const app = Vue.createApp({
             if (data) { //if there is another parameter given then console log this
                 console.log(data);
             }
-            if (e) {
+            // if (e) {
 
-            }
+            // }
         },
         handleMousemove(e) {
             this.x = e.offsetX;
@@ -36,6 +36,11 @@ const app = Vue.createApp({
         },
         toggleFav(book) {
             book.isFav = !book.isFav;
+        }
+    },
+    computed: {
+        filteredBooks() {
+            return this.books.filter((book) => book.isFav); // does that book have isFav = true? If so it will keep and filter out any that are isFav = false
         }
     }
 });
